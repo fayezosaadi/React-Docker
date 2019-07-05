@@ -1,5 +1,3 @@
-language: javascript
-
 # we need run the test suites inside if the docker container
 sudo: required
 
@@ -10,4 +8,4 @@ before_install:
   - docker build -t fayosaadi/react-docker -f Dockerfile.dev .
 
 script:
-  - docker run fayosaadi/react-docker npm run test --coverage --detectOpenHandles --forceExit
+  - docker run fayosaadi/react-docker npm run test:ci
