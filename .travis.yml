@@ -1,3 +1,5 @@
+language: javascript
+
 # we need run the test suites inside if the docker container
 sudo: required
 
