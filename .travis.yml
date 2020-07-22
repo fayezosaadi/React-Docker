@@ -1,11 +1,8 @@
-# we need run the test suites inside if the docker container
+# we need run the test suites inside the docker container on Travis CI systems
 sudo: required
-
 services:
   - docker
-
 before_install:
-  - docker build -t fayosaadi/react-docker -f Dockerfile.dev .
-
+  - docker -t fayosaadi/react-docker build -f dockerfile.dev .
 script:
-  - docker run fayosaadi/react-docker npm run test:ci
+  - docker run fayosaadi/react-docker yarn test:ci
