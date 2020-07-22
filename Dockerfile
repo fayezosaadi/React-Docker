@@ -12,4 +12,6 @@ RUN yarn build
 ## Run Phase, We're going to be using nginx server in order to serve the built result static content
 ## https://hub.docker.com/_/nginx
 FROM nginx
+# expose port for elastic beachstalk
+EXPOSE 80
 COPY --from=builder /app/build /usr/share/nginx/html
