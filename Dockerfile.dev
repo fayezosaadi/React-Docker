@@ -1,13 +1,12 @@
 FROM node:alpine
 
-WORKDIR './app'
+WORKDIR app
 
 COPY package.json .
 
-RUN npm install
+RUN yarn install
 
-# This is not necessary in development, because we can reference the local file system in the docker container
-# using volumes
 COPY . .
 
-CMD ["npm", "run", "start"]
+# start the app
+CMD ["yarn", "start"]

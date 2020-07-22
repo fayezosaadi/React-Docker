@@ -8,7 +8,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <span role="img" aria-label=''>
-          React apploication developed and deployed with Docker 🐳
+          React application developed and deployed with Docker 🐳
         </span>
       </header>
     </div>
