@@ -2,7 +2,7 @@
 
 ## Multi-step build process uses different base images
 ## Build Phase/stage
-FROM node:alpine as builder
+FROM node:alpine
 WORKDIR /app
 COPY package.json .
 RUN yarn install
@@ -14,4 +14,4 @@ RUN yarn build
 FROM nginx
 # expose port for elastic beachstalk
 EXPOSE 80
-COPY --from=builder /app/build /usr/share/nginx/html
+COPY --from=0 /app/build /usr/share/nginx/html
